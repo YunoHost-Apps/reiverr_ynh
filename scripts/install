@@ -19,6 +19,10 @@ ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 # Upgrade NPM
 ynh_npm install --global npm@latest
 
+# Install vite
+ynh_npm install --global vite
+
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
