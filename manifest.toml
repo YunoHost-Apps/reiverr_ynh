@@ -83,8 +83,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/aleksilassila/reiverr/archive/refs/tags/v0.8.0.tar.gz"
-        sha256 = "768e8fffdf44f0eaef69512d000993499c8bc363a4af5c7dc5fb4616eaa36322"
+        url = "https://github.com/aleksilassila/reiverr/archive/refs/tags/v0.7.0.tar.gz"
+        sha256 = "be64b54781e0cd9f16e8eca42e52e6bfaa67d53a55d57ad3f4705ba11b6aeb6b"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
