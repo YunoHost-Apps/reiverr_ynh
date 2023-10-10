@@ -22,6 +22,9 @@ ynh_npm install --global npm@latest
 # Install Yarn
 ynh_npm install --global yarn
 
+# Install vite
+ynh_npm install --global vite
+
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
