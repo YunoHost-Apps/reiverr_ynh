@@ -9,7 +9,7 @@ Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
 Environment="__YNH_NODE_LOAD_PATH__"
 Environment=NODE_ENV=production
-ExecStart=__YNH_NODE__ __INSTALL_DIR__/__YHH_NPM__ run deploy
+ExecStart=__YNH_NODE__ __INSTALL_DIR__/__YNH_NPM__ run deploy
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 
