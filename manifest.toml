@@ -71,7 +71,7 @@ ram.runtime = "50M"
     type = "domain"
     optional = true
 
-    [install.jellyin_api]
+    [install.jellyfin_api]
     ask.en = "(Optional) Insert here the api key from your Jellyfin instance"
     ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Jellyfin"
     type = "string"
