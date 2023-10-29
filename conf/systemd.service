@@ -9,7 +9,8 @@ Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
 Environment="__YNH_NODE_LOAD_PATH__"
 Environment=NODE_ENV=production
-ExecStart=__INSTALL_DIR__/__YNH_NPM__ run deploy
+EnvironmentFile=__INSTALL_DIR__/.env
+ExecStart=npm run deploy
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 
