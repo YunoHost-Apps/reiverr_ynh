@@ -18,7 +18,7 @@ code = "https://github.com/aleksilassila/reiverr"
 [integration]
 yunohost = ">= 11.2.4"
 architectures = "all"
-multi_instance = true
+multi_instance = false
 
 ldap = "not_relevant"
 sso = "not_relevant"
@@ -38,45 +38,6 @@ ram.runtime = "50M"
     [install.init_main_permission]
     type = "group"
     default = "visitors"
-
-    [install.radarr_domain]
-    ask.en = "(Optional) Insert here the api key from your Radarr instance"
-    ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Radarr"
-    type = "domain"
-    optional = true
-
-    [install.radarr_api]
-    ask.en = "(Optional) Insert here the api key from your Radarr instance"
-    ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Radarr"
-    type = "string"
-    default = false
-    optional = true
-
-    [install.sonarr_domain]
-    ask.en = "(Optional) Insert here the api key from your Sonarr instance"
-    ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Sonarr"
-    type = "domain"
-    optional = true
-
-    [install.sonarr_api]
-    ask.en = "(Optional) Insert here the api key from your Sonarr instance"
-    ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Sonarr"
-    type = "string"
-    default = false
-    optional = true
-
-    [install.jellyfin_domain]
-    ask.en = "(Optional) Insert here the api key from your Jellyfin instance"
-    ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Jellyfin"
-    type = "domain"
-    optional = true
-
-    [install.jellyin_api]
-    ask.en = "(Optional) Insert here the api key from your Jellyfin instance"
-    ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Jellyfin"
-    type = "string"
-    default = false
-    optional = true
 
  [resources]
   

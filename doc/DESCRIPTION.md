@@ -1,1 +1,1 @@
-This is a dummy description of this app features
+Reiverr is a project that aims to create a single UI for interacting with TMDB, Jellyfin, Radarr and Sonarr, as well as be an alternative to Overseerr.
