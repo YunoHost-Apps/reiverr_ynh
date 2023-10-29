@@ -9,32 +9,14 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-#=================================================
-# LOAD SETTINGS
-#=================================================
-ynh_script_progression --message="Loading installation settings..." --weight=1
-
-db_name=$(ynh_app_setting_get --app=$app --key=db_name)
-db_user=$db_name
-
-
 ynh_script_progression --message="Stopping and removing the systemd service..." --weight=1
 
-# Remove the dedicated systemd config
 ynh_remove_systemd_config
 
-# Remove a database if it exists, along with the associated user
-ynh_mongo_remove_db --db_user=$db_user --db_name=$db_name
-ynh_remove_mongo
-
-
 ynh_script_progression --message="Removing logrotate configuration..." --weight=1
-# Remove the app-specific logrotate config
 ynh_remove_logrotate
 
-
 ynh_script_progression --message="Removing NGINX web server configuration..." --weight=1
-# Remove the dedicated NGINX config
 ynh_remove_nginx_config
 
 #=================================================
@@ -42,7 +24,6 @@ ynh_remove_nginx_config
 #=================================================
 ynh_script_progression --message="Removing dependencies..." --weight=4
 
-# Remove metapackage and its dependencies
 ynh_remove_nodejs
 
 #=================================================

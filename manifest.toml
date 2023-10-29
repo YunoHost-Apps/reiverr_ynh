@@ -39,45 +39,6 @@ ram.runtime = "50M"
     type = "group"
     default = "visitors"
 
-    [install.radarr_domain]
-    ask.en = "(Optional) Insert here the api key from your Radarr instance"
-    ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Radarr"
-    type = "domain"
-    optional = true
-
-    [install.radarr_api]
-    ask.en = "(Optional) Insert here the api key from your Radarr instance"
-    ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Radarr"
-    type = "string"
-    default = false
-    optional = true
-
-    [install.sonarr_domain]
-    ask.en = "(Optional) Insert here the api key from your Sonarr instance"
-    ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Sonarr"
-    type = "domain"
-    optional = true
-
-    [install.sonarr_api]
-    ask.en = "(Optional) Insert here the api key from your Sonarr instance"
-    ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Sonarr"
-    type = "string"
-    default = false
-    optional = true
-
-    [install.jellyfin_domain]
-    ask.en = "(Optional) Insert here the api key from your Jellyfin instance"
-    ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Jellyfin"
-    type = "domain"
-    optional = true
-
-    [install.jellyfin_api]
-    ask.en = "(Optional) Insert here the api key from your Jellyfin instance"
-    ask.fr = "(Optionnel) Insérez ici la clé API de votre instance Jellyfin"
-    type = "string"
-    default = false
-    optional = true
-
  [resources]
   
     [resources.sources]
