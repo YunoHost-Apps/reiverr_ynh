@@ -1,1 +1,1 @@
-Ceci est une fausse description des fonctionalités de l'app
+Reiverr est un projet qui a pour objectif de créer une interface utilisateur unique pour intéragir avec TMDB, Jellyfin, Radarr et Sonarr, en plus d’être une alternative à Overseerr.
