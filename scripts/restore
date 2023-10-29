@@ -11,22 +11,6 @@ source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# INSTALL DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Installing dependencies..." --weight=5
-
-ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
-
-# Upgrade NPM
-ynh_npm install --global npm@latest
-
-# Install Yarn
-ynh_npm install --global yarn
-
-# Install vite
-ynh_npm install --global vite
-
-#=================================================
 # RESTORE THE APP MAIN DIR
 #=================================================
 ynh_script_progression --message="Restoring the app main directory..." --weight=1
@@ -36,6 +20,19 @@ ynh_restore_file --origin_path="$install_dir"
 chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
 chown -R $app:$app "$install_dir"
+
+# REINSTALL DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Reinstalling dependencies..." --weight=10
+
+# Define and install dependencies
+ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
+
+# Reinstall Yarn
+ynh_npm install --global yarn
+
+# Reinstall vite
+ynh_npm install --global vite
 
 #=================================================
 # RESTORE SYSTEM CONFIGURATIONS
