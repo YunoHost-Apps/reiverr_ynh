@@ -13,9 +13,6 @@ ynh_script_progression --message="Stopping and removing the systemd service..." 
 
 ynh_remove_systemd_config
 
-ynh_script_progression --message="Removing logrotate configuration..." --weight=1
-ynh_remove_logrotate
-
 ynh_script_progression --message="Removing NGINX web server configuration..." --weight=1
 ynh_remove_nginx_config
 
@@ -31,7 +28,7 @@ ynh_remove_nodejs
 #=================================================
 # REMOVE SERVICE IN YUNOHOST
 #=================================================
-ynh_script_progression --message="Integrating service in YunoHost..."
+ynh_script_progression --message="Removing service in YunoHost..."
 
 yunohost service remove $app --log="/var/log/$app/$app.log"
 
