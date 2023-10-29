@@ -18,7 +18,7 @@ code = "https://github.com/aleksilassila/reiverr"
 [integration]
 yunohost = ">= 11.2.4"
 architectures = "all"
-multi_instance = true
+multi_instance = false
 
 ldap = "not_relevant"
 sso = "not_relevant"
