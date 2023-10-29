@@ -30,7 +30,7 @@ ynh_remove_nodejs
 #=================================================
 ynh_script_progression --message="Removing service in YunoHost..."
 
-yunohost service remove $app --log="/var/log/$app/$app.log"
+yunohost service remove $app
 
 #=================================================
 # REMOVE VARIOUS FILES
