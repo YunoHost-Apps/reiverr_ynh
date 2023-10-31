@@ -32,10 +32,13 @@ ynh_script_progression --message="Restoring the app main directory..." --weight=
 
 ynh_restore_file --origin_path="$install_dir"
 
+pushd $install_dir
+ynh_use_nodejs
+popd
+
 chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
 chown -R $app:$app "$install_dir"
-
 
 #=================================================
 # RESTORE SYSTEM CONFIGURATIONS
