@@ -16,18 +16,22 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-Ceci est une fausse description des fonctionalités de l'app
-
+Reiverr est un projet qui a pour objectif de créer une interface utilisateur unique pour intéragir avec TMDB, Jellyfin, Radarr et Sonarr, en plus d’être une alternative à Overseerr.
 
 **Version incluse :** 0.8.0~ynh1
 
 ## Captures d’écran
 
-![Capture d’écran de Reiverr](./doc/screenshots/example.jpg)
+![Capture d’écran de Reiverr](./doc/screenshots/screenshot.png)
+
+## :red_circle: Fonctions indésirables
+
+- **Alpha software**: Early development stage. May contain changing or unstable features, bugs, and security vulnerability.
 
 ## Documentations et ressources
 
 * Dépôt de code officiel de l’app : <https://github.com/aleksilassila/reiverr>
+* YunoHost Store: <https://apps.yunohost.org/app/reiverr>
 * Signaler un bug : <https://github.com/YunoHost-Apps/reiverr_ynh/issues>
 
 ## Informations pour les développeurs
