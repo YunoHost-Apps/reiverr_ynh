@@ -13,9 +13,6 @@ ExecStart=__YNH_NODE__ __YNH_NPM__ run deploy
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 
-#To prevent the 502 bad gateway after restore
-TimeoutSec=900
-
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these
 # .. but this should be a good baseline
