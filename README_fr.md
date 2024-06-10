@@ -18,7 +18,7 @@ Il NE doit PAS être modifié à la main.
 
 Reiverr est un projet qui a pour objectif de créer une interface utilisateur unique pour intéragir avec TMDB, Jellyfin, Radarr et Sonarr, en plus d’être une alternative à Overseerr.
 
-**Version incluse :** 0.8.1~ynh1
+**Version incluse :** 1.1.1~ynh1
 
 ## Captures d’écran
 
@@ -26,7 +26,7 @@ Reiverr est un projet qui a pour objectif de créer une interface utilisateur un
 
 ## :red_circle: Anti-fonctionnalités
 
-- **Logiciel en version alpha**: Le logiciel est au tout début de son développement. Il pourrait contenir des fonctionnalités changeantes ou instables, des bugs, et des failles de sécurité.
+- **Logiciel en version alpha **: Le logiciel est au tout début de son développement. Il pourrait contenir des fonctionnalités changeantes ou instables, des bugs, et des failles de sécurité.
 
 ## Documentations et ressources
 
