@@ -9,7 +9,7 @@ It shall NOT be edited by hand.
 
 [![Install Reiverr with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=reiverr)
 
-*[Read this README in other languages.](./ALL_README.md)*
+
 
 > *This package allows you to install Reiverr quickly and simply on a YunoHost server.*  
 > *If you don't have YunoHost, please consult [the guide](https://yunohost.org/install) to learn how to install it.*
@@ -18,7 +18,7 @@ It shall NOT be edited by hand.
 
 Reiverr is a project that aims to create a single UI for interacting with TMDB, Jellyfin, Radarr and Sonarr, as well as be an alternative to Overseerr.
 
-**Shipped version:** 1.1.1~ynh1
+
 
 ## Screenshots
 
