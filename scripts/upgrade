@@ -18,12 +18,6 @@ ynh_script_progression --message="Upgrading dependencies..." --weight=5
 
 ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 
-# Install Yarn
-ynh_npm install --global yarn
-
-# Install vite
-ynh_npm install --global vite
-
 #=================================================
 # STANDARD UPGRADE STEPS
 #=================================================
@@ -63,6 +57,8 @@ ynh_script_progression --message="Building __APP__..."
 
 pushd $install_dir
     ynh_use_nodejs
+    ynh_npm install yarn
+    ynh_npm install vite
 
 	ynh_script_progression --message="npm install... This can be very long, be patient !" --weight=18
 	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH $ynh_npm install --network-timeout=100000
