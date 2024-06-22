@@ -24,7 +24,7 @@ Reiverr is a project that aims to create a single UI for interacting with TMDB, 
 
 ![Captura de Reiverr](./doc/screenshots/screenshot.png)
 
-## :red_circle: funcionalidades no deseadas
+## :red_circle: Características no deseables
 
 - **Alpha software**: Early development stage. May contain changing or unstable features, bugs, and security vulnerability.
 
