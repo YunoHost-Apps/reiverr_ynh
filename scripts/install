@@ -36,7 +36,7 @@ ynh_script_progression "Building $app..."
 
 pushd $install_dir
 
-    ynh_hide_warnings ynh_exec_as_app node_load_PATH npm install vite
+    ynh_hide_warnings ynh_exec_as_app npm install vite
 
 	ynh_script_progression "npm install... This can be very long, be patient !"
 	ynh_hide_warnings ynh_exec_as_app npm install --network-timeout=100000
@@ -65,7 +65,6 @@ ynh_script_progression "Configuring logrotate to manage application logfiles"
 ynh_config_add_logrotate
 
 touch /var/log/$app/$app.log
-#REMOVEME? Assuming ynh_config_add_logrotate is called, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data /var/log/$app/
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
