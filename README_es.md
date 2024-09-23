@@ -5,7 +5,7 @@ No se debe editar a mano.
 
 # Reiverr para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/reiverr.svg)](https://dash.yunohost.org/appci/app/reiverr) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/reiverr.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/reiverr.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/reiverr.svg)](https://ci-apps.yunohost.org/ci/apps/reiverr/) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/reiverr.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/reiverr.maintain.svg)
 
 [![Instalar Reiverr con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=reiverr)
 
@@ -36,7 +36,7 @@ Reiverr is a project that aims to create a single UI for interacting with TMDB, 
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/reiverr_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/reiverr_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 
