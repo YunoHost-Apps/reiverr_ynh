@@ -18,9 +18,6 @@ ynh_script_progression "Setting up source files..."
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 750 "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
@@ -42,18 +39,15 @@ pushd $install_dir
     ynh_hide_warnings ynh_exec_as_app node_load_PATH npm install vite
 
 	ynh_script_progression "npm install... This can be very long, be patient !"
-	ynh_hide_warnings ynh_exec_as_app node_load_PATH npm install --network-timeout=100000
+	ynh_hide_warnings ynh_exec_as_app npm install --network-timeout=100000
 
 	ynh_script_progression "Building Yarn dev dependencies... This can be very long, be patient !"
-	ynh_hide_warnings ynh_exec_as_app node_load_PATH yarn run build
+	ynh_hide_warnings ynh_exec_as_app yarn run build
 
 	ynh_script_progression "Cleaning cache... "
-	ynh_hide_warnings ynh_exec_as_app node_load_PATH yarn cache clean 2>&1
+	ynh_hide_warnings ynh_exec_as_app yarn cache clean 2>&1
 popd
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 750 "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:$app "$install_dir"
 #=================================================
 # SETUP SYSTEMD
 #=================================================
