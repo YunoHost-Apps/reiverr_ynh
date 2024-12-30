@@ -5,7 +5,9 @@ Hij mag NIET handmatig aangepast worden.
 
 # Reiverr voor Yunohost
 
-[![Integratieniveau](https://dash.yunohost.org/integration/reiverr.svg)](https://ci-apps.yunohost.org/ci/apps/reiverr/) ![Mate van functioneren](https://ci-apps.yunohost.org/ci/badges/reiverr.status.svg) ![Onderhoudsstatus](https://ci-apps.yunohost.org/ci/badges/reiverr.maintain.svg)
+[![Integratieniveau](https://apps.yunohost.org/badge/integration/reiverr)](https://ci-apps.yunohost.org/ci/apps/reiverr/)
+![Mate van functioneren](https://apps.yunohost.org/badge/state/reiverr)
+![Onderhoudsstatus](https://apps.yunohost.org/badge/maintained/reiverr)
 
 [![Reiverr met Yunohost installeren](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=reiverr)
 

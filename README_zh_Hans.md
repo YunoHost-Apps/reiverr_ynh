@@ -5,7 +5,9 @@
 
 # YunoHost 上的 Reiverr
 
-[![集成程度](https://dash.yunohost.org/integration/reiverr.svg)](https://ci-apps.yunohost.org/ci/apps/reiverr/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/reiverr.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/reiverr.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/reiverr)](https://ci-apps.yunohost.org/ci/apps/reiverr/)
+![工作状态](https://apps.yunohost.org/badge/state/reiverr)
+![维护状态](https://apps.yunohost.org/badge/maintained/reiverr)
 
 [![使用 YunoHost 安装 Reiverr](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=reiverr)
 
