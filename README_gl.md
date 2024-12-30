@@ -5,7 +5,9 @@ NON debe editarse manualmente.
 
 # Reiverr para YunoHost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/reiverr.svg)](https://ci-apps.yunohost.org/ci/apps/reiverr/) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/reiverr.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/reiverr.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/reiverr)](https://ci-apps.yunohost.org/ci/apps/reiverr/)
+![Estado de funcionamento](https://apps.yunohost.org/badge/state/reiverr)
+![Estado de mantemento](https://apps.yunohost.org/badge/maintained/reiverr)
 
 [![Instalar Reiverr con YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=reiverr)
 

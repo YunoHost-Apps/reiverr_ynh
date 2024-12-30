@@ -5,7 +5,9 @@
 
 # Reiverr для YunoHost
 
-[![Уровень интеграции](https://dash.yunohost.org/integration/reiverr.svg)](https://ci-apps.yunohost.org/ci/apps/reiverr/) ![Состояние работы](https://ci-apps.yunohost.org/ci/badges/reiverr.status.svg) ![Состояние сопровождения](https://ci-apps.yunohost.org/ci/badges/reiverr.maintain.svg)
+[![Уровень интеграции](https://apps.yunohost.org/badge/integration/reiverr)](https://ci-apps.yunohost.org/ci/apps/reiverr/)
+![Состояние работы](https://apps.yunohost.org/badge/state/reiverr)
+![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/reiverr)
 
 [![Установите Reiverr с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=reiverr)
 

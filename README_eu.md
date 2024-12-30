@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Reiverr YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/reiverr.svg)](https://ci-apps.yunohost.org/ci/apps/reiverr/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/reiverr.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/reiverr.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/reiverr)](https://ci-apps.yunohost.org/ci/apps/reiverr/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/reiverr)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/reiverr)
 
 [![Instalatu Reiverr YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=reiverr)
 

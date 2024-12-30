@@ -5,7 +5,9 @@ It shall NOT be edited by hand.
 
 # Reiverr for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/reiverr.svg)](https://ci-apps.yunohost.org/ci/apps/reiverr/) ![Working status](https://ci-apps.yunohost.org/ci/badges/reiverr.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/reiverr.maintain.svg)
+[![Integration level](https://apps.yunohost.org/badge/integration/reiverr)](https://ci-apps.yunohost.org/ci/apps/reiverr/)
+![Working status](https://apps.yunohost.org/badge/state/reiverr)
+![Maintenance status](https://apps.yunohost.org/badge/maintained/reiverr)
 
 [![Install Reiverr with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=reiverr)
 
