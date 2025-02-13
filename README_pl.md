@@ -20,7 +20,7 @@ Nie powinno być ono edytowane ręcznie.
 
 Reiverr is a project that aims to create a single UI for interacting with TMDB, Jellyfin, Radarr and Sonarr, as well as be an alternative to Overseerr.
 
-**Dostarczona wersja:** 1.1.1~ynh1
+**Dostarczona wersja:** 2.1.1~ynh1
 
 ## Zrzuty ekranu
 
