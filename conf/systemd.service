@@ -9,7 +9,7 @@ Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
 Environment="PATH=__PATH_WITH_NODEJS__"
 Environment=NODE_ENV=production
-ExecStart=__NODEJS_DIR__/node __NODEJS_DIR__/npm run deploy
+ExecStart=__NODEJS_DIR__/node backend/dist/src/main
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 

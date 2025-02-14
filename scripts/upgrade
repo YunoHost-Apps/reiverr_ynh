@@ -43,16 +43,18 @@ ynh_script_progression "Building __APP__..."
 
 pushd $install_dir
 
-    npm install vite
+    ynh_hide_warnings ynh_exec_as_app npm install vite
 
 	ynh_script_progression "npm install... This can be very long, be patient !"
 	ynh_hide_warnings ynh_exec_as_app npm install --network-timeout=100000
 
-	ynh_script_progression "Building Yarn dev dependencies... This can be very long, be patient !"
-	ynh_hide_warnings ynh_exec_as_app yarn run build
+	ynh_script_progression "Building $app... This can be very long, be patient !"
+	ynh_hide_warnings ynh_exec_as_app npm install --prefix backend
+	ynh_hide_warnings ynh_exec_as_app npm run build
 
 	ynh_script_progression "Cleaning cache... "
-	ynh_hide_warnings ynh_exec_as_app yarn cache clean 2>&1
+	ynh_hide_warnings ynh_exec_as_app npm cache clean --force
+	
 popd
 
 #=================================================
