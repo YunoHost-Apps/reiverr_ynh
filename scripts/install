@@ -1,7 +1,26 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source _common.sh
 source /usr/share/yunohost/helpers
+
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+ynh_script_progression "Setting up source files..."
+
+# Download, check integrity, uncompress and patch the source from manifest.toml
+ynh_setup_source --dest_dir="$install_dir"
+
+#=================================================
+# APP INITIAL CONFIGURATION
+#=================================================
+ynh_script_progression "Adding $app's configuration files..."
+
+ynh_config_add --template=".env" --destination="$install_dir/backend/.env"
 
 #=================================================
 # INSTALL DEPENDENCIES
@@ -11,55 +30,28 @@ ynh_script_progression "Installing dependencies..."
 ynh_nodejs_install
 
 #=================================================
-# DOWNLOAD, CHECK AND UNPACK SOURCE
-#=================================================
-ynh_script_progression "Setting up source files..."
-
-# Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir="$install_dir"
-
-#=================================================
-# NGINX CONFIGURATION
-#=================================================
-ynh_script_progression "Configuring NGINX web server..."
-
-# Create a dedicated NGINX config
-ynh_config_add_nginx
-
-#=================================================
-# SPECIFIC SETUP
-#=================================================
-#=================================================
 # BUILD APP
 #=================================================
 ynh_script_progression "Building $app..."
 
 pushd $install_dir
-
-    ynh_hide_warnings ynh_exec_as_app npm install vite
-
-	ynh_script_progression "npm install... This can be very long, be patient !"
-	ynh_hide_warnings ynh_exec_as_app npm install --network-timeout=100000
-
-	ynh_script_progression "Building Yarn dev dependencies... This can be very long, be patient !"
-	ynh_hide_warnings ynh_exec_as_app yarn run build
-
-	ynh_script_progression "Cleaning cache... "
-	ynh_hide_warnings ynh_exec_as_app yarn cache clean 2>&1
+	ynh_hide_warnings ynh_exec_as_app npm install
+	ynh_hide_warnings ynh_exec_as_app npm ci --prefix backend
+	ynh_hide_warnings ynh_exec_as_app npm run build
+	ynh_exec_as_app mkdir -p "$install_dir/backend/plugins" 
 popd
 
 #=================================================
-# SETUP SYSTEMD
+# SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression "Configuring $app's systemd service..."
+ynh_script_progression "Adding system configurations related to $app..."
+
+# Create a dedicated NGINX config using the conf/nginx.conf template
+ynh_config_add_nginx
 
 # Create a dedicated systemd config
 ynh_config_add_systemd
-
-#=================================================
-# LOGROTATE
-#=================================================
-ynh_script_progression "Configuring logrotate to manage application logfiles"
+yunohost service add "$app" --log="/var/log/$app/$app.log"
 
 # Use logrotate to manage application logfile(s)
 ynh_config_add_logrotate
@@ -67,19 +59,12 @@ ynh_config_add_logrotate
 touch /var/log/$app/$app.log
 
 #=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression "Integrating service in YunoHost..."
-
-yunohost service add $app --log="/var/log/$app/$app.log"
-
-#=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
 # Start a systemd service
-ynh_systemctl --service=$app --action="start"  --wait_until=""
+ynh_systemctl --service="$app" --action="start" --wait_until="Application is running on" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # END OF SCRIPT
