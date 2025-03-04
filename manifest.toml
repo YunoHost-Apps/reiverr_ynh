@@ -36,14 +36,14 @@ ram.runtime = "50M"
     type = "group"
     default = "visitors"
 
- [resources]
-  
+[resources]
+
     [resources.sources]
 
-        [resources.sources.main]
-        url = "https://github.com/aleksilassila/reiverr/archive/refs/tags/v2.2.0.tar.gz"
-        sha256 = "5b3aac589bfa9f3c4f15f45c85363a69b945639ea3f5b8bbc577c9b9e658c5e5"
-        autoupdate.strategy = "latest_github_tag"
+    [resources.sources.main]
+    url = "https://github.com/aleksilassila/reiverr/archive/refs/tags/v2.2.0.tar.gz"
+    sha256 = "5b3aac589bfa9f3c4f15f45c85363a69b945639ea3f5b8bbc577c9b9e658c5e5"
+    autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
 
@@ -55,8 +55,7 @@ ram.runtime = "50M"
     [resources.ports]
     main.default = 9494
 
-    [resources.apt]
-    extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
-    extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
-    extras.yarn.packages = "yarn"
-
+    [resources.apt.extras.yarn]
+    repo = "deb https://dl.yarnpkg.com/debian/ stable main"
+    key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
+    packages = ["yarn"]
