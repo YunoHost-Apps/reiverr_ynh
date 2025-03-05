@@ -1,7 +1,38 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source _common.sh
 source /usr/share/yunohost/helpers
+
+#=================================================
+# STOP SYSTEMD SERVICE
+#=================================================
+ynh_script_progression "Stopping $app's systemd service..."
+
+ynh_systemctl --service="$app" --action="stop"
+
+#=================================================
+# ENSURE DOWNWARD COMPATIBILITY
+#=================================================
+ynh_script_progression "Ensuring downward compatibility..."
+
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+ynh_script_progression "Upgrading source files..."
+
+# Download, check integrity, uncompress and patch the source from manifest.toml
+ynh_setup_source --dest_dir="$install_dir" --full_replace
+
+#=================================================
+# UPDATE A CONFIG FILE
+#=================================================
+ynh_script_progression "Updating $app's configuration files..."
+
+ynh_config_add --template=".env" --destination="$install_dir/backend/.env"
 
 #=================================================
 # UPGRADE DEPENDENCIES
@@ -11,79 +42,35 @@ ynh_script_progression "Upgrading dependencies..."
 ynh_nodejs_install
 
 #=================================================
-# STOP SYSTEMD SERVICE
+# BUILD APP
 #=================================================
-ynh_script_progression "Stopping $app's systemd service..."
+ynh_script_progression "Building $app..."
 
-ynh_systemctl --service=$app --action="stop"
-
-#=================================================
-# "REBUILD" THE APP (DEPLOY NEW SOURCES, RERUN NPM BUILD...)
-#=================================================
-# DOWNLOAD, CHECK AND UNPACK SOURCE
-#=================================================
-ynh_script_progression "Setting up source files..."
-
-# Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir="$install_dir"
+pushd $install_dir
+	ynh_hide_warnings ynh_exec_as_app npm install
+	ynh_hide_warnings ynh_exec_as_app npm ci --prefix backend
+	ynh_hide_warnings ynh_exec_as_app npm run build
+	ynh_exec_as_app mkdir -p "$install_dir/backend/plugins"
+popd
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression "Upgrading system configurations related to $app..."
 
-# This should be a literal copypaste of what happened in the install's "System configuration" section
-
 ynh_config_add_nginx
 
-#=================================================
-# BUILD APP
-#=================================================
-ynh_script_progression "Building __APP__..."
-
-pushd $install_dir
-
-    npm install vite
-
-	ynh_script_progression "npm install... This can be very long, be patient !"
-	ynh_hide_warnings ynh_exec_as_app npm install --network-timeout=100000
-
-	ynh_script_progression "Building Yarn dev dependencies... This can be very long, be patient !"
-	ynh_hide_warnings ynh_exec_as_app yarn run build
-
-	ynh_script_progression "Cleaning cache... "
-	ynh_hide_warnings ynh_exec_as_app yarn cache clean 2>&1
-popd
-
-#=================================================
-# SETUP SYSTEMD
-#=================================================
-ynh_script_progression "Configuring $app's systemd service..."
-
-# Create a dedicated systemd config
 ynh_config_add_systemd
+yunohost service add "$app" --log="/var/log/$app/$app.log"
 
-#=================================================
-# LOGROTATE
-#=================================================
-ynh_script_progression "Configuring logrotate to manage application logfiles"
-
-# Use logrotate to manage application logfile(s)
 ynh_config_add_logrotate
-
-#=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression "Integrating service in YunoHost..."
-
-yunohost service add $app --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service=$app --action="start"  --wait_until=""
+ynh_systemctl --service="$app" --action="start" --wait_until="is running on" --log_path="/var/log/$app/$app.log" --timeout=300
 
 #=================================================
 # END OF SCRIPT
