@@ -16,7 +16,7 @@ license = "GPL-3.0"
 code = "https://github.com/aleksilassila/reiverr"
 
 [integration]
-yunohost = ">= 11.2.18"
+yunohost = ">= 12.1.15"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = false
@@ -61,3 +61,6 @@ ram.runtime = "50M"
     extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
     extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
     extras.yarn.packages = "yarn"
+
+    [resources.nodejs]
+    version = "18"
