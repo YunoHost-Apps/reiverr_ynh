@@ -7,7 +7,7 @@ name = "Reiverr"
 description.en = "Clean combined interface for Jellyfin, TMDB, Radarr and Sonarr, as well as a replacement to Overseerr"
 description.fr = "Interface claire combinée pour Jellyfin, TMDB, Radarr et Sonarr, en plus d’être un remplaçant d’Overseerr"
 
-version = "2.2.0~ynh2"
+version = "2.2.0~ynh3"
 
 maintainers = ["Thovi98"]
 
@@ -16,7 +16,7 @@ license = "GPL-3.0"
 code = "https://github.com/aleksilassila/reiverr"
 
 [integration]
-yunohost = ">= 12.1.15"
+yunohost = ">= 12.1.38"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = false
@@ -51,16 +51,13 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
-
+    main.auth_header = false
+    
     [resources.ports]
     main.default = 9494
 
     [resources.apt]
     packages = "curl"
 
-    extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
-    extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
-    extras.yarn.packages = "yarn"
-
     [resources.nodejs]
-    version = "18"
+    version = "20"
