@@ -51,16 +51,13 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
-
+    main.auth_header = false
+    
     [resources.ports]
     main.default = 9494
 
     [resources.apt]
     packages = "curl"
 
-    extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
-    extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
-    extras.yarn.packages = "yarn"
-
     [resources.nodejs]
-    version = "18"
+    version = "20"
