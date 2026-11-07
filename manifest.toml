@@ -7,7 +7,7 @@ name = "Reiverr"
 description.en = "Clean combined interface for Jellyfin, TMDB, Radarr and Sonarr, as well as a replacement to Overseerr"
 description.fr = "Interface claire combinée pour Jellyfin, TMDB, Radarr et Sonarr, en plus d’être un remplaçant d’Overseerr"
 
-version = "2.2.0~ynh3"
+version = "2.2.1~ynh1"
 
 maintainers = ["Thovi98"]
 
@@ -41,8 +41,8 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/aleksilassila/reiverr/archive/refs/tags/v2.2.0.tar.gz"
-    sha256 = "5b3aac589bfa9f3c4f15f45c85363a69b945639ea3f5b8bbc577c9b9e658c5e5"
+    url = "https://github.com/aleksilassila/reiverr/archive/refs/tags/v2.2.1.tar.gz"
+    sha256 = "db25951f39d234ee0934840bd65a56209797c8cacfb8e0b8ae30a9b2e0039665"
     autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
